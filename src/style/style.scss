@@ -171,3 +171,9 @@ $duration: map-get($elastic, 'duration');
   line-height: 45px;
   padding: 6px 0;
 }
+
+.card img {
+  width: 100%; /* Ширина изображений */
+  height: 100%; /* Высота изображении */
+  object-fit: cover;
+}
