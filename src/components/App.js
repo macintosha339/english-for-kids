@@ -21,14 +21,14 @@ class App {
     }
 
     start() {
-        this.loadImg(this.card1, 'src/data/img/vegetables.jpg');
-        this.loadImg(this.card2, 'src/data/img/apple.jpg');
+        this.loadImg(this.card1, 'src/data/img/games.png');
+        this.loadImg(this.card2, 'src/data/img/fruit.jpg');
         this.loadImg(this.card3, 'src/data/img/vegetables.jpg');
-        this.loadImg(this.card4, 'src/data/img/vegetables.jpg');
-        this.loadImg(this.card5, 'src/data/img/vegetables.jpg');
-        this.loadImg(this.card6, 'src/data/img/vegetables.jpg');
-        this.loadImg(this.card7, 'src/data/img/vegetables.jpg');
-        this.loadImg(this.card8, 'src/data/img/vegetables.jpg');
+        this.loadImg(this.card4, 'src/data/img/actions.jpg');
+        this.loadImg(this.card5, 'src/data/img/animals.jpg');
+        this.loadImg(this.card6, 'src/data/img/things.jpg');
+        this.loadImg(this.card7, 'src/data/img/clothes.jpg');
+        this.loadImg(this.card8, 'src/data/img/emotions.jpg');
     }
 
     loadImg(elem, url) {
