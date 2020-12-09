@@ -1,3 +1,5 @@
+import cards from '../data/cardsData';
+
 class App {
     constructor() {
         this.card1 = document.getElementById('1_card');
@@ -8,6 +10,8 @@ class App {
         this.card6 = document.getElementById('6_card');
         this.card7 = document.getElementById('7_card');
         this.card8 = document.getElementById('8_card');
+        this.arrCards = [this.card1, this.card2, this.card3, this.card4, this.card5, this.card6,
+            this.card7, this.card8];
     }
 
     state = {
@@ -35,6 +39,24 @@ class App {
         const img = document.createElement('img');
         const elemI = elem.appendChild(img);
         elemI.src = url;
+        return this;
+    }
+
+    changeCategory(indexOfCategory) {
+        this.state.page = indexOfCategory + 1;
+        this.arrCards.forEach((elem, i) => {
+            // eslint-disable-next-line no-param-reassign
+            elem.innerHTML = `${cards[indexOfCategory + 1][i].word}
+            <div class = "card-rotate"></div>
+            <img src = 'src/data/${cards[indexOfCategory + 1][i].image}'>`;
+            // const img = elem.querySelector('img');
+            // img.src = `src/data/${cards[indexOfCategory + 1][i].image}`;
+        });
+    }
+
+    flipCard() {
+        // eslint-disable-next-line no-console
+        console.log('hello');
         return this;
     }
 }

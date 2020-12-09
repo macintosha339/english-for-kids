@@ -51,10 +51,10 @@ const cards = [['Games', 'Fruit', 'Vegetables', 'Actions', 'Animals', 'Things', 
     ],
     [
         {
-            word: 'aprikot',
+            word: 'apricot',
             translation: 'абрикос',
-            image: 'img/aprikot.jpg',
-            audioSrc: 'audio/aprikot.mp3',
+            image: 'img/apricot.jpg',
+            audioSrc: 'audio/apricot.mp3',
         },
         {
             word: 'watermelon',
