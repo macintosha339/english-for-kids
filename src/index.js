@@ -17,10 +17,12 @@ app.start();
 
 categoryCards.forEach((elem, i) => {
     elem.addEventListener('click', () => {
+        const rotateBtn = document.querySelectorAll('.card-rotate');
         if (app.state.page === 0) {
             app.changeCategory(i);
+        } else {
+            app.sayWord(i);
         }
-        const rotateBtn = document.querySelectorAll('.card-rotate');
         rotateBtn.forEach((elems) => {
             elems.addEventListener('click', (e) => {
                 e.stopPropagation();

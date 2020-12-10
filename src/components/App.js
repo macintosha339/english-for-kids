@@ -62,6 +62,12 @@ class App {
         element.parentNode.parentNode.classList.toggle('is-flipped');
         return this;
     }
+
+    sayWord(indexOfWord) {
+        const audio = new Audio(`src/data/${cards[this.state.page][indexOfWord].audioSrc}`);
+        audio.play();
+        return this;
+    }
 }
 
 export default App;
