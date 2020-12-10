@@ -1,5 +1,6 @@
 import './style/style.scss';
 import App from './components/App';
+import cards from './data/cardsData';
 
 const app = new App();
 const btn = document.getElementById('show');
@@ -19,14 +20,20 @@ categoryCards.forEach((elem, i) => {
         if (app.state.page === 0) {
             app.changeCategory(i);
         }
-    });
-
-    const rotateBtn = document.querySelector('.card-rotate');
-    if (rotateBtn) {
-        rotateBtn.addEventListener('click', () => {
-            console.log('hello');
+        const rotateBtn = document.querySelectorAll('.card-rotate');
+        rotateBtn.forEach((elems) => {
+            elems.addEventListener('click', (e) => {
+                e.stopPropagation();
+                app.flipCard(e.target);
+                app.state.isFlipped = true;
+            });
         });
-    }
+    });
+    elem.addEventListener('mouseleave', (e) => {
+        e.stopPropagation();
+        elem.classList.remove('is-flipped');
+        app.state.isFlipped = false;
+    });
 });
 
 alert('ВНИМАНИЕ, проверяющий!!! Убедительная просьба не выставлять на данный момент оценку за таск, я еще нахожусь в процессе выполнения данного задания! Моя телега для контактов @ant_mihailov');

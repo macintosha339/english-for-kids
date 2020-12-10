@@ -22,6 +22,7 @@ class App {
         randomArr: [],
         errors: 0,
         endGame: false,
+        isFlipped: false,
     }
 
     start() {
@@ -46,17 +47,19 @@ class App {
         this.state.page = indexOfCategory + 1;
         this.arrCards.forEach((elem, i) => {
             // eslint-disable-next-line no-param-reassign
-            elem.innerHTML = `${cards[indexOfCategory + 1][i].word}
+            elem.innerHTML = `<div class="card__face card__face--front">
+            ${cards[indexOfCategory + 1][i].word}
             <div class = "card-rotate"></div>
-            <img src = 'src/data/${cards[indexOfCategory + 1][i].image}'>`;
+            <img src = 'src/data/${cards[indexOfCategory + 1][i].image}'>
+            </div>
+            <div class="card__face card__face--back">${cards[indexOfCategory + 1][i].translation}</div>`;
             // const img = elem.querySelector('img');
             // img.src = `src/data/${cards[indexOfCategory + 1][i].image}`;
         });
     }
 
-    flipCard() {
-        // eslint-disable-next-line no-console
-        console.log('hello');
+    flipCard(element) {
+        element.parentNode.parentNode.classList.toggle('is-flipped');
         return this;
     }
 }
