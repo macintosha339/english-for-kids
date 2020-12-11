@@ -20,7 +20,6 @@ class App {
         currentCard: 0,
         play: false,
         playActive: false,
-        randomArr: [],
         errors: 0,
         endGame: false,
         isFlipped: false,
@@ -49,6 +48,8 @@ class App {
     changeCategory(indexOfCategory) {
         this.arrLinks[this.state.page].style.color = '#FFF';
         this.state.page = indexOfCategory + 1;
+        this.state.playActive = false;
+        this.state.currentCard = 0;
         this.arrLinks[this.state.page].style.color = '#3D3D3D';
         if (indexOfCategory === -1) {
             this.arrCards.forEach((elem, i) => {
@@ -102,6 +103,7 @@ class App {
 
     changeMode() {
         this.state.play = !this.state.play;
+        if (!this.state.play) this.state.playActive = false;
     }
 }
 
