@@ -1,4 +1,38 @@
-const cards = [['Games', 'Fruit', 'Vegetables', 'Actions', 'Animals', 'Things', 'Clothes', 'Emotions'],
+const cards = [
+    [
+        {
+            word: 'Games',
+            image: 'img/games.png',
+        },
+        {
+            word: 'Fruit',
+            image: 'img/fruit.jpg',
+        },
+        {
+            word: 'Vegetables',
+            image: 'img/vegetables.jpg',
+        },
+        {
+            word: 'Actions',
+            image: 'img/actions.jpg',
+        },
+        {
+            word: 'Animals',
+            image: 'img/animals.jpg',
+        },
+        {
+            word: 'Things',
+            image: 'img/things.jpg',
+        },
+        {
+            word: 'Clothes',
+            image: 'img/clothes.jpg',
+        },
+        {
+            word: 'Emotions',
+            image: 'img/emotions.jpg',
+        },
+    ],
     [
         {
             word: 'football',
@@ -13,7 +47,7 @@ const cards = [['Games', 'Fruit', 'Vegetables', 'Actions', 'Animals', 'Things', 
             audioSrc: 'audio/hockey.mp3',
         },
         {
-            word: 'ping-ping',
+            word: 'ping-pong',
             translation: 'настольный теннис',
             image: 'img/ping-pong.jpg',
             audioSrc: 'audio/ping-pong.mp3',

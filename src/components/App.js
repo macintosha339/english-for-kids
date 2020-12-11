@@ -12,6 +12,7 @@ class App {
         this.card8 = document.getElementById('8_card');
         this.arrCards = [this.card1, this.card2, this.card3, this.card4, this.card5, this.card6,
             this.card7, this.card8];
+        this.arrLinks = document.querySelectorAll('.category__link');
     }
 
     state = {
@@ -34,6 +35,7 @@ class App {
         this.loadImg(this.card6, 'src/data/img/things.jpg');
         this.loadImg(this.card7, 'src/data/img/clothes.jpg');
         this.loadImg(this.card8, 'src/data/img/emotions.jpg');
+        this.arrLinks[this.state.page].style.color = '#3D3D3D';
     }
 
     loadImg(elem, url) {
@@ -44,18 +46,26 @@ class App {
     }
 
     changeCategory(indexOfCategory) {
+        this.arrLinks[this.state.page].style.color = '#FFF';
         this.state.page = indexOfCategory + 1;
-        this.arrCards.forEach((elem, i) => {
-            // eslint-disable-next-line no-param-reassign
-            elem.innerHTML = `<div class="card__face card__face--front">
-            ${cards[indexOfCategory + 1][i].word}
-            <div class = "card-rotate"></div>
-            <img src = 'src/data/${cards[indexOfCategory + 1][i].image}'>
-            </div>
-            <div class="card__face card__face--back">${cards[indexOfCategory + 1][i].translation}</div>`;
-            // const img = elem.querySelector('img');
-            // img.src = `src/data/${cards[indexOfCategory + 1][i].image}`;
-        });
+        this.arrLinks[this.state.page].style.color = '#3D3D3D';
+        if (indexOfCategory === -1) {
+            this.arrCards.forEach((elem, i) => {
+                // eslint-disable-next-line no-param-reassign
+                elem.innerHTML = `${cards[indexOfCategory + 1][i].word}
+                <img src = 'src/data/${cards[indexOfCategory + 1][i].image}'>`;
+            });
+        } else {
+            this.arrCards.forEach((elem, i) => {
+                // eslint-disable-next-line no-param-reassign
+                elem.innerHTML = `<div class="card__face card__face--front">
+                ${cards[indexOfCategory + 1][i].word}
+                <div class = "card-rotate"></div>
+                <img src = 'src/data/${cards[indexOfCategory + 1][i].image}'>
+                </div>
+                <div class="card__face card__face--back">${cards[indexOfCategory + 1][i].translation}</div>`;
+            });
+        }
     }
 
     flipCard(element) {

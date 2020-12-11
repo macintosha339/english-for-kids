@@ -275,6 +275,11 @@ $duration: map-get($elastic, 'duration');
   font-size: 34px;
   line-height: 45px;
   padding: 6px 0;
+  cursor: pointer;
+}
+
+.category__link:hover {
+  transform: scale(1.1);
 }
 
 
