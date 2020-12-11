@@ -48,7 +48,7 @@
   left: 5px;
 }
 
-.card img {
+.image {
   width: 100%; /* Ширина изображений */
   height: 85%; /* Высота изображении */
   object-fit: cover;
@@ -401,4 +401,53 @@ $duration: map-get($elastic, 'duration');
   height: 25px;
   background-position: center;
   background-size: cover;
+}
+
+.play_mode {
+  display: none;
+}
+
+ .img_play_mode {
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.btns {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btns_play {
+  display: block !important;
+}
+
+.start_btn {
+  font-size: 24px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 650px;
+  height: 65px;
+  background-color: #7c7fe0;
+  color: #fff;
+  border-radius: 10px;
+  outline: none;
+  border-width: 1px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+.repeatBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    background-color: #7c7fe0;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    transition: 0.3s;
 }

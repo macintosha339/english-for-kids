@@ -41,6 +41,7 @@ class App {
     loadImg(elem, url) {
         const img = document.createElement('img');
         const elemI = elem.appendChild(img);
+        elemI.classList.add('image');
         elemI.src = url;
         return this;
     }
@@ -53,18 +54,38 @@ class App {
             this.arrCards.forEach((elem, i) => {
                 // eslint-disable-next-line no-param-reassign
                 elem.innerHTML = `${cards[indexOfCategory + 1][i].word}
-                <img src = 'src/data/${cards[indexOfCategory + 1][i].image}'>`;
+                <img src = 'src/data/${cards[indexOfCategory + 1][i].image}' class="image">`;
             });
         } else {
             this.arrCards.forEach((elem, i) => {
                 // eslint-disable-next-line no-param-reassign
                 elem.innerHTML = `<div class="card__face card__face--front">
-                ${cards[indexOfCategory + 1][i].word}
+                <span class = "word">${cards[indexOfCategory + 1][i].word}</span>
                 <div class = "card-rotate"></div>
-                <img src = 'src/data/${cards[indexOfCategory + 1][i].image}'>
+                <img src = 'src/data/${cards[indexOfCategory + 1][i].image}' class = "image">
                 </div>
                 <div class="card__face card__face--back">${cards[indexOfCategory + 1][i].translation}</div>`;
             });
+        }
+        if (this.state.play) {
+            const startBtn = document.querySelector('.btns');
+            if (this.state.page !== 0) {
+                const rotateBtn = document.querySelectorAll('.card-rotate');
+                const wordList = document.querySelectorAll('.word');
+                const imageList = document.querySelectorAll('.image');
+                rotateBtn.forEach((elems) => {
+                    elems.classList.toggle('play_mode');
+                });
+                wordList.forEach((elems) => {
+                    elems.classList.toggle('play_mode');
+                });
+                imageList.forEach((elems) => {
+                    elems.classList.toggle('img_play_mode');
+                });
+                if (!startBtn.classList.contains('btns_play')) startBtn.classList.toggle('btns_play');
+            } else {
+                startBtn.classList.toggle('btns_play');
+            }
         }
     }
 
@@ -77,6 +98,10 @@ class App {
         const audio = new Audio(`src/data/${cards[this.state.page][indexOfWord].audioSrc}`);
         audio.play();
         return this;
+    }
+
+    changeMode() {
+        this.state.play = !this.state.play;
     }
 }
 
