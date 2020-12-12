@@ -108,7 +108,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(?:gif|png|jpg|jpeg)$/i,
-                type: 'data',
+                type: 'asset/resource',
                 generator: {
                     filename: 'img/[name][ext]',
                 },
@@ -123,7 +123,7 @@ module.exports = {
             },
             {
                 test: /\.mp3$/,
-                type: 'data',
+                type: 'asset/resource',
                 generator: {
                     filename: 'audio/[name][ext]',
                 },
