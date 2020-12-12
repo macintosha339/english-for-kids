@@ -26,21 +26,21 @@ class App {
     }
 
     start() {
-        this.loadImg(this.card1, 'src/data/img/games.png');
-        this.loadImg(this.card2, 'src/data/img/fruit.jpg');
-        this.loadImg(this.card3, 'src/data/img/vegetables.jpg');
-        this.loadImg(this.card4, 'src/data/img/actions.jpg');
-        this.loadImg(this.card5, 'src/data/img/animals.jpg');
-        this.loadImg(this.card6, 'src/data/img/things.jpg');
-        this.loadImg(this.card7, 'src/data/img/clothes.jpg');
-        this.loadImg(this.card8, 'src/data/img/emotions.jpg');
+        this.loadImg(this.card1, 'src/data/img/games.png', 'image');
+        this.loadImg(this.card2, 'src/data/img/fruit.jpg', 'image');
+        this.loadImg(this.card3, 'src/data/img/vegetables.jpg', 'image');
+        this.loadImg(this.card4, 'src/data/img/actions.jpg', 'image');
+        this.loadImg(this.card5, 'src/data/img/animals.jpg', 'image');
+        this.loadImg(this.card6, 'src/data/img/things.jpg', 'image');
+        this.loadImg(this.card7, 'src/data/img/clothes.jpg', 'image');
+        this.loadImg(this.card8, 'src/data/img/emotions.jpg', 'image');
         this.arrLinks[this.state.page].style.color = '#3D3D3D';
     }
 
-    loadImg(elem, url) {
+    loadImg(elem, url, selectorClass) {
         const img = document.createElement('img');
         const elemI = elem.appendChild(img);
-        elemI.classList.add('image');
+        elemI.classList.add(selectorClass);
         elemI.src = url;
         return this;
     }
