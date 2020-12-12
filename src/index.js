@@ -182,5 +182,3 @@ startButton.addEventListener('click', () => {
         document.querySelector('.material-icons').style.fontSize = '38px';
     }
 });
-
-alert('ВНИМАНИЕ, проверяющий!!! Убедительная просьба не выставлять на данный момент оценку за таск, я еще нахожусь в процессе выполнения данного задания! Моя телега для контактов @ant_mihailov');
