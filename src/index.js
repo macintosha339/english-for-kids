@@ -142,7 +142,6 @@ categoryLinks.forEach((elem, i) => {
         btn.classList.toggle('open');
     });
 });
-
 modeButton.addEventListener('click', () => {
     app.changeMode();
     app.state.currentCard = 0;

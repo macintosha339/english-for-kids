@@ -26,8 +26,8 @@ class App {
     }
 
     start() {
-        this.loadImg(this.card1, 'src/data/img/games.png', 'image');
-        this.loadImg(this.card2, 'src/data/img/fruit.jpg', 'image');
+        this.loadImg(this.card1, 'https://github.com/macintosha339/english-for-kids/blob/fdf1eedd017726b3117e148b9113ae1b8e15ed4e/src%2Fdata%2Fimg%2Fgames.png', 'image');
+        this.loadImg(this.card2, 'https://github.com/macintosha339/english-for-kids/blob/fdf1eedd017726b3117e148b9113ae1b8e15ed4e/src%2Fdata%2Fimg%2Ffruit.jpg', 'image');
         this.loadImg(this.card3, 'src/data/img/vegetables.jpg', 'image');
         this.loadImg(this.card4, 'src/data/img/actions.jpg', 'image');
         this.loadImg(this.card5, 'src/data/img/animals.jpg', 'image');
