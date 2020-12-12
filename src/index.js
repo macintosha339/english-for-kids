@@ -35,17 +35,17 @@ categoryCards.forEach((elem, i) => {
         } else if (app.state.playActive) {
             if (i === arr[app.state.currentCard]) {
                 app.state.currentCard += 1;
-                const correct = new Audio('src/data/audio/correct.mp3');
-                app.loadImg(starsBlock, 'src/data/img/star-win.svg', 'star');
+                const correct = new Audio('https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/audio/correct.mp3');
+                app.loadImg(starsBlock, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/star-win.svg', 'star');
                 correct.play();
                 elem.classList.add('hide');
                 if (app.state.currentCard === 8 && app.state.errors === 0) {
                     correct.addEventListener('ended', () => {
-                        const winVoice = new Audio('src/data/audio/success.mp3');
+                        const winVoice = new Audio('https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/audio/success.mp3');
                         hideList.forEach((item) => {
                             item.classList.add('dissapear');
                         });
-                        app.loadImg(document.body, 'src/data/img/success.jpg', 'endGameImage');
+                        app.loadImg(document.body, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/success.jpg', 'endGameImage');
                         winVoice.play();
                         setTimeout(() => {
                             app.changeCategory(-1);
@@ -69,11 +69,11 @@ categoryCards.forEach((elem, i) => {
                 }
                 if (app.state.currentCard === 8 && app.state.errors !== 0) {
                     correct.addEventListener('ended', () => {
-                        const loseVoice = new Audio('src/data/audio/failure.mp3');
+                        const loseVoice = new Audio('https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/audio/failure.mp3');
                         hideList.forEach((item) => {
                             item.classList.add('dissapear');
                         });
-                        app.loadImg(document.body, 'src/data/img/failure.jpg', 'endGameImage');
+                        app.loadImg(document.body, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/failure.jpg', 'endGameImage');
                         const mistakes = document.createElement('div');
                         const errors = document.body.appendChild(mistakes);
                         errors.classList.add('endGameDiv');
@@ -107,8 +107,8 @@ categoryCards.forEach((elem, i) => {
                 }
             } else {
                 app.state.errors += 1;
-                app.loadImg(starsBlock, 'src/data/img/star.svg', 'star');
-                const err = new Audio('src/data/audio/error.mp3');
+                app.loadImg(starsBlock, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/star.svg', 'star');
+                const err = new Audio('https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/audio/error.mp3');
                 err.play();
             }
         }

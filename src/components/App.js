@@ -26,14 +26,14 @@ class App {
     }
 
     start() {
-        this.loadImg(this.card1, 'https://github.com/macintosha339/english-for-kids/blob/fdf1eedd017726b3117e148b9113ae1b8e15ed4e/src%2Fdata%2Fimg%2Fgames.png', 'image');
-        this.loadImg(this.card2, 'https://github.com/macintosha339/english-for-kids/blob/fdf1eedd017726b3117e148b9113ae1b8e15ed4e/src%2Fdata%2Fimg%2Ffruit.jpg', 'image');
-        this.loadImg(this.card3, 'src/data/img/vegetables.jpg', 'image');
-        this.loadImg(this.card4, 'src/data/img/actions.jpg', 'image');
-        this.loadImg(this.card5, 'src/data/img/animals.jpg', 'image');
-        this.loadImg(this.card6, 'src/data/img/things.jpg', 'image');
-        this.loadImg(this.card7, 'src/data/img/clothes.jpg', 'image');
-        this.loadImg(this.card8, 'src/data/img/emotions.jpg', 'image');
+        this.loadImg(this.card1, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/games.png', 'image');
+        this.loadImg(this.card2, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/fruit.jpg', 'image');
+        this.loadImg(this.card3, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/vegetables.jpg', 'image');
+        this.loadImg(this.card4, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/actions.jpg', 'image');
+        this.loadImg(this.card5, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/animals.jpg', 'image');
+        this.loadImg(this.card6, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/things.jpg', 'image');
+        this.loadImg(this.card7, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/clothes.jpg', 'image');
+        this.loadImg(this.card8, 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/img/emotions.jpg', 'image');
         this.arrLinks[this.state.page].style.color = '#3D3D3D';
     }
 
@@ -55,7 +55,7 @@ class App {
             this.arrCards.forEach((elem, i) => {
                 // eslint-disable-next-line no-param-reassign
                 elem.innerHTML = `${cards[indexOfCategory + 1][i].word}
-                <img src = 'src/data/${cards[indexOfCategory + 1][i].image}' class="image">`;
+                <img src = 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/${cards[indexOfCategory + 1][i].image}' class="image">`;
             });
         } else {
             this.arrCards.forEach((elem, i) => {
@@ -63,7 +63,7 @@ class App {
                 elem.innerHTML = `<div class="card__face card__face--front">
                 <span class = "word">${cards[indexOfCategory + 1][i].word}</span>
                 <div class = "card-rotate"></div>
-                <img src = 'src/data/${cards[indexOfCategory + 1][i].image}' class = "image">
+                <img src = 'https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/${cards[indexOfCategory + 1][i].image}' class = "image">
                 </div>
                 <div class="card__face card__face--back">${cards[indexOfCategory + 1][i].translation}</div>`;
             });
@@ -96,7 +96,7 @@ class App {
     }
 
     sayWord(indexOfWord) {
-        const audio = new Audio(`src/data/${cards[this.state.page][indexOfWord].audioSrc}`);
+        const audio = new Audio(`https://raw.githubusercontent.com/macintosha339/english-for-kids/main/src/data/${cards[this.state.page][indexOfWord].audioSrc}`);
         audio.play();
         return this;
     }
